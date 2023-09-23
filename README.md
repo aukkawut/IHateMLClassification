@@ -15,7 +15,7 @@ This is just a metric learning. Here, we use Hotelling's $T^2$ statistic to perf
     - For a given test observation $x$, compute the Hotelling's $T^2$ statistic for each class: $$T^2_c = (x - \mu_c)^\top S_c^{-1} (x - \mu_c)$$
     - Convert the $T^2$ statistic to an $F$-value: $$F_c = \frac{n - p}{p \times n} \times T^2_c$$
 where $n$ is the number of samples in class $c$ and $p$ is the dimensionality of the data.
-    - Derive the $p$-value for this $F$-value using the CDF of the $F$-distribution. Which is essentially, $$p_{\text{val}}(T^2_c) = 1 - \left[ \frac{\Gamma\left(\frac{1}{2}\right)}{\Gamma\left(\frac{p}{2}\right) \Gamma\left(\frac{1-p}{2}\right)} \int_{0}^{\frac{\frac{n - p}{n} T^2_c}{\frac{n - p}{n} T^2_c + (1-p)}} t^{\frac{p}{2}-1} (1-t)^{\frac{1-p}{2}-1}  dt \right]$$
+    - Derive the $p$-value for this $F$-value using the CDF of the $F$-distribution. Which is essentially, $$p_{\text{val}}(F_c) = 1 - \left[ \frac{\Gamma\left(\frac{1}{2}\right)}{\Gamma\left(\frac{p}{2}\right) \Gamma\left(\frac{1-p}{2}\right)} \int_{0}^{\frac{\frac{n - p}{n} T^2_c}{\frac{n - p}{n} T^2_c + (1-p)}} t^{\frac{p}{2}-1} (1-t)^{\frac{1-p}{2}-1}  dt \right]$$
 
 ### Classification Decision
 
