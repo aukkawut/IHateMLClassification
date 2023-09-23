@@ -33,3 +33,6 @@ We got accuracy of 90.43% on 50% test data. Here is the visualization of what we
 
 ![pval](https://github.com/aukkawut/IHateMLClassification/blob/main/pval1.png)
 
+## Why no one do this?
+
+Ok, I will let you evaluate time complexity of the said algorithm as your homework.
