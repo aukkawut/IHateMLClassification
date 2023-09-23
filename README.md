@@ -31,5 +31,5 @@ $$
 
 We got accuracy of 90.43% on 50% test data. Here is the visualization of what we got.
 
-[[pval1.png|plot]]
+![pval](https://github.com/aukkawut/IHateMLClassification/blob/main/pval1.png)
 
