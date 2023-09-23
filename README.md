@@ -12,7 +12,7 @@ This is just a metric learning. Here, we use Hotelling's $T^2$ statistic to perf
     - For each digit class $c$, calculate the mean vector $\mu_c$ and the precision matrix $S_c^{-1}$.
 
 2. **Hotelling's $T^2$ Test**:
-    - For a given test observation $x$, compute the Hotelling's $T^2$ statistic for each class: $$T^2_c = (x - \mu_c)^T S_c^{-1} (x - \mu_c)$$
+    - For a given test observation $x$, compute the Hotelling's $T^2$ statistic for each class: $$T^2_c = (x - \mu_c)^\top S_c^{-1} (x - \mu_c)$$
     - Convert the $T^2$ statistic to an $F$-value: $$F_c = \frac{n - p}{p \times n} \times T^2_c$$
 where $n$ is the number of samples in class $c$ and $p$ is the dimensionality of the data.
     - Derive the $p$-value for this $F$-value using the CDF of the $F$-distribution.
