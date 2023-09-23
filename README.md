@@ -22,7 +22,7 @@ where $n$ is the number of samples in class $c$ and $p$ is the dimensionality of
 - Assign the test observation $x$ to the class $c^*$ with the highest $p$-value:
 
 $$
-c^* = \arg\max_c p_c
+c^* = \arg\max_c p_{val}(F_{c})
 $$
 
 - If all $p$-values are below a significance threshold (e.g., $0.05$), classify $x$ as "unknown".
