@@ -59,7 +59,7 @@ Another idea is to turn the naive bayes into bayesian test. That is more staight
 ## Note
 
 At this point of the work, it is just essentially try to find
-$$c_{x_0} = \arg\min_{\mu_c\in\boldsymbol{\mu}} (x_0 - \mu_c)^\top S_c^{-1}(x_0 - \mu_c)$$
+$$c_{x_0} = \arg\min_{\mu_c\in\boldsymbol{\mu}} \; (x_0 - \mu_c)^\top S_c^{-1}(x_0 - \mu_c)$$
 i.e., minimum Mahalanobis distance (in a sense). Other test statistic needed to be explored to make this a real work.
 
 ## References
