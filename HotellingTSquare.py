@@ -21,9 +21,10 @@ for c in np.unique(y_train):
 nc = {c: len(X_train[y_train == c]) for c in np.unique(y_train)}
 pc = X_train.shape[1]
 
-def p_compute(x, cmeans, cprecisions, nc, pc):
+def p_compute(x, cmeans, cprecisions, nc, pc, tstat = False):
     classes = list(cmeans.keys())
     p_values = []
+    t2_stats = []
     for c in classes:
         mean = cmeans[c]
         inv_cov = cprecisions[c]
@@ -33,10 +34,12 @@ def p_compute(x, cmeans, cprecisions, nc, pc):
         F = (n - pc) / (pc * n) * t2_stat
         p_value = 1 - f.cdf(F, pc, n-pc)
         p_values.append(p_value)
-
+        t2_stats.append((c,t2_stat))
+    if tstat:
+        return p_values, t2_stats
     return p_values
 
-def classify(x, cmeans, cprecisions, nc, pc, sig=0.05):
+def classify(x, cmeans, cprecisions, nc, pc, sig=0.05, verbose = False):
     p_values = p_compute(x, cmeans, cprecisions, nc, pc)
     predicted_class = np.argmax(p_values)
     if all(p < sig for p in p_values):
@@ -50,7 +53,8 @@ print(f"Accuracy: {accuracy * 100:.2f}%")
 def visualize(i, X_test, y_test, cmeans, cprecisions, nc, pc):
     x = X_test[i]
     true_label = y_test[i]
-    p_values = p_compute(x, cmeans, cprecisions, nc, pc)
+    p_values, t_stats = p_compute(x, cmeans, cprecisions, nc, pc, tstat = True)
+    print(t_stats)
     predicted_class = np.argmax(p_values)
     plt.figure(figsize=(10, 5))
     plt.subplot(1, 2, 1)
