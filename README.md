@@ -62,6 +62,10 @@ At this point of the work, it is just essentially try to find
 $$c_{x_0} = \arg\min_{\mu_c\in\boldsymbol{\mu}} (x_0 - \mu_c)^\top S_c^{-1}(x_0 - \mu_c)$$
 i.e., minimum Mahalanobis distance (in a sense). Other test statistic needed to be explored to make this a real work.
 
+## Code
+
+Code can be access [here](https://github.com/aukkawut/IHateMLClassification)
+
 ## References
 
 [1] A. Gretton, K. M. Borgwardt, M. J. Rasch, B. Schölkopf, and A. Smola, ‘A Kernel Two-Sample Test’, *Journal of Machine Learning Research*, vol. 13, no. 25, pp. 723–773, 2012.
